@@ -61,5 +61,3 @@ Uses the ChatGPT API to provide:
 
 ---
 
-## 📁 Project Structure
-
