@@ -42,9 +42,9 @@ const UploadImage = () => {
   };
 
   return (
-    <Box>
+    <Box className="container" width="2xl">
       <FileUpload.Root
-        maxW="xl"
+        // maxW="xl"
         alignItems="stretch"
         maxFiles={1}
         onFileAccept={handleFileAccept}
@@ -74,8 +74,8 @@ const UploadImage = () => {
       )}
 
       {result && (
-        <Box mt={4} p={4} borderWidth={1} borderRadius="md" maxWidth={'xl'}>
-          <pre>{JSON.stringify(result, null, 2)}</pre>
+        <Box mt={4} p={4} borderWidth={1} borderRadius="md" fontSize="md" fontWeight="extralight">
+          {result}
         </Box>
       )}
     </Box>
