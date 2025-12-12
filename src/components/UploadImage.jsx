@@ -24,7 +24,7 @@ const UploadImage = () => {
       const response = await client.predict("/classify_image", [file]);
 
       console.log(response);
-      setResult(response.data);
+      setResult(response.data[0].prediction);
     } catch (error) {
       console.error("Classification failed:", error);
     } finally {
