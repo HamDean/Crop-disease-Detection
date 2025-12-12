@@ -19,13 +19,12 @@ app.post("/recommend", async (req, res) => {
 
         Their crop has been diagnosed with: ${disease}
 
-        In 3-4 sentences, explain:
-        1. What this disease is
-        2. What causes it
-        3. How to treat it affordably
-        4. How to prevent it
+        First, inform the farmer of the disease. Example(From the image you uploaded, it appears your crop is infected with ___).
+        Then, in 2 - 3 sentences, explain:
+        1. the cause of the disease
+        2. How to treat it affordably
+        3. How to prevent it
 
-        Be clear, simple, and direct. No bullet points or headings.
 `;
 
     const completion = await openai.chat.completions.create({
