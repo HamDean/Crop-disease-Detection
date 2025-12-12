@@ -23,7 +23,7 @@ const UploadImage = () => {
 
       const response = await client.predict("/classify_image", [file]);
 
-      const remediesRes = await fetch("http://localhost:3001/recommend", {
+      const remediesRes = await fetch("https://crop-disease-detection-ftxd.onrender.com/recommend", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
