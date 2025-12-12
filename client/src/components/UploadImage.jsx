@@ -23,8 +23,17 @@ const UploadImage = () => {
 
       const response = await client.predict("/classify_image", [file]);
 
-      console.log(response);
-      setResult(response.data[0].prediction);
+      const remediesRes = await fetch("http://localhost:3001/recommend", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ disease: response.data[0].prediction }),
+      });
+
+      const remediesJson = await remediesRes.json();
+      setResult(remediesJson.remedies);
+
     } catch (error) {
       console.error("Classification failed:", error);
     } finally {
@@ -65,7 +74,7 @@ const UploadImage = () => {
       )}
 
       {result && (
-        <Box mt={4} p={4} borderWidth={1} borderRadius="md">
+        <Box mt={4} p={4} borderWidth={1} borderRadius="md" maxWidth={'xl'}>
           <pre>{JSON.stringify(result, null, 2)}</pre>
         </Box>
       )}
