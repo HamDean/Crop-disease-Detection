@@ -55,7 +55,7 @@ Uses the ChatGPT API to provide:
 - Chakra UI
 - Netlify
 
-### Backend (optional)
+### Backend
 - Node.js
 - Express.js
 
